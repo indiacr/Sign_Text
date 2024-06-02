@@ -73,7 +73,7 @@ def main():
         st.write("Click on start to use webcam and detect your sign")
 
         webrtc_ctx = webrtc_streamer(key="example", mode=WebRtcMode.SENDRECV, rtc_configuration=RTC_CONFIGURATION,
-                        video_processor_factory=signdetection, media_stream_constraints={"video": True, "audio": False},)
+                        video_processor_factory=signdetection, media_stream_constraints={"video": True, "audio": False})
         text_output = st.empty()
         if webrtc_ctx.video_transformer:
             with webrtc_ctx.video_transformer.frame_lock:
